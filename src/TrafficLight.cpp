@@ -66,7 +66,7 @@ void TrafficLight::cycleThroughPhases()
     // to the message queue using move semantics. The cycle duration should be a random value between 4 and 6 seconds. 
     // Also, the while-loop should use std::this_thread::sleep_for to wait 1ms between two cycles. 
   
-    double cycleDuration; // duration of a red/green light cycle in ms  
+    long cycleDuration; // duration of a red/green light cycle in ms  
     std::chrono::time_point<std::chrono::system_clock> lastUpdate;
 
     // init stop watch
@@ -80,7 +80,7 @@ void TrafficLight::cycleThroughPhases()
         std::random_device rd;
         std::mt19937 eng(rd());
         std::uniform_int_distribution<> distr(4000, 6000);
-        cycleDuration = (double)distr(eng)/1000;
+        cycleDuration = distr(eng);
 
         // compute time difference to stop watch
         long timeSinceLastUpdate = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - lastUpdate).count();
