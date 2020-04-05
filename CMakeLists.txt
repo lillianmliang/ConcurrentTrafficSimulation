@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.11.3)
 
 # set(CMAKE_CXX_STANDARD 17)
 project(OSM_A_star_search)
+<<<<<<< 35c7b9c964f0e0dec688ef06107aa93af448b699
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++17 -pthread")
+=======
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -pthread")
+>>>>>>> feat: add TrafficLight class
 
 find_package(OpenCV 4.1 REQUIRED)
 
